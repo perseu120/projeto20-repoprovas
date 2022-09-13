@@ -1,0 +1,10 @@
+PORT=numero da porta que vai roda o servidro
+
+DATABASE_URL=  url do banco de dados
+
+KEY=10
+
+TOKEN_SECRET_KEY = minhaSenhaSecreta usada para criptografa o token
+TOKEN_EXPIRES_IN= 2d tempo para o token expirar
+
+LINK_REQUEST_FRONT = https://drivenpassdb.herokuapp.com/
