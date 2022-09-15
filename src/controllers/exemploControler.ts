@@ -5,9 +5,9 @@ import { exemploexemploService} from '../services/exemploService';
 
 export async function exemploController(req: Request, res: Response){
 
-    const recebeDados:UserInsertData = req.body.email;
+    // const recebeDados:UserInsertData = req.body;
 
-    const token = await exemploexemploService(recebeDados);
+    // const token = await exemploexemploService(recebeDados);
  
     res.status(200).send("cheguei no controlador");
 }

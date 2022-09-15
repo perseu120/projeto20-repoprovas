@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon ./src/index.ts",
     "build": "tsc",
-    "start": "node dist/src/index.ts"
+    "start": "ts-node dist/src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -21,13 +21,17 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "heroku": "^7.63.0",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@prisma/client": "^4.3.1",
     "@types/cors": "^2.8.12",
     "@types/dotenv": "^8.2.0",
-    "@types/node": "^18.7.17",
+    "@types/node": "^18.7.18",
     "prisma": "^4.3.1"
   }
 }

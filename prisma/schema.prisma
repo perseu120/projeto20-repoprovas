@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
@@ -16,4 +16,61 @@ model Users {
   email String @unique
 
   @@map("users")
+}
+
+model Terms {
+  id          Int           @id @default(autoincrement())
+  number      Int           @unique
+  disciplines Disciplines[]
+
+  @@map("terms")
+}
+
+model Disciplines {
+  id                  Int                   @id @default(autoincrement())
+  name                String                @unique
+  terms               Terms                 @relation(fields: [termsId], references: [id])
+  termsId             Int
+  TeachersDisciplines TeachersDisciplines[]
+
+  @@map("disciplines")
+}
+
+model Teachers {
+  id                  Int                   @id @default(autoincrement())
+  name                String                @unique
+  TeachersDisciplines TeachersDisciplines[]
+
+  @@map("teachers")
+}
+
+model TeachersDisciplines {
+  id            Int         @id @default(autoincrement())
+  teachers      Teachers    @relation(fields: [teachersId], references: [id])
+  teachersId    Int
+  disciplines   Disciplines @relation(fields: [disciplinesId], references: [id])
+  disciplinesId Int
+  tests         Tests      @relation(fields: [testsId], references: [id])
+  testsId       Int
+
+  @@map("teachersDisciplines")
+}
+
+model Categories {
+  id      Int    @id @default(autoincrement())
+  name    String @unique
+  tests   Tests @relation(fields: [testsId], references: [id])
+  testsId Int
+
+  @@map("categories")
+}
+
+model Tests {
+  id                  Int                   @id @default(autoincrement())
+  name                String
+  pdfUrl              String
+  categories          Categories[]
+  TeachersDisciplines TeachersDisciplines[]
+
+  @@map("tests")
 }
