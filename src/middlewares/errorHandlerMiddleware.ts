@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
 export default function errorHandler (error: any, req: Request, res: Response, next: NextFunction) {
-  console.log(error);
+  console.log(error)
   if (error.code === "NotFound") {
     return res.sendStatus(404);
   }
@@ -17,6 +17,6 @@ export default function errorHandler (error: any, req: Request, res: Response, n
   else if (error.code === "Expired") {
     return res.sendStatus(410);
   }
-
+  
   res.sendStatus(500); // internal server error
 }
