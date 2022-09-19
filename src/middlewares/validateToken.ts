@@ -16,8 +16,8 @@ export default async function validateToken(req: Request, res: Response, next: N
     };;
   
     try {             
-      const JWT_SECRET = process.env.JWT_SECRET;
-      const { userId } = jwt.verify(token, JWT_SECRET) as { userId: number };
+      const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
+      const { userId } = jwt.verify(token, TOKEN_SECRET_KEY) as { userId: number };
       res.locals.user = userId;
       next();
     } catch {

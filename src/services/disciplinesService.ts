@@ -1,5 +1,5 @@
-import * as categoriesRepository from "../repositories/categoriesRepository.js";
-import * as disciplinesRepository from "../repositories/disciplinesRepository.js";
+import * as categoriesRepository from "../repositories/categoriesRepository";
+import * as disciplinesRepository from "../repositories/disciplinesRepository";
 
 async function getDisciplinesByCategoryName(categoryName: string) {
   const category = await categoriesRepository.findByName(categoryName);

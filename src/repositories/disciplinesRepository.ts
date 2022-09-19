@@ -6,19 +6,7 @@ export async function findById(id: number) {
 
 export async function findAllByCategory(category: string) {
   return await client.disciplines.findMany({
-    // where: {
-    //     teachersDisciplines: {
-    //     some: {
-    //       tests: {
-    //         some: {
-    //           category: {
-    //             name: category,
-    //           },
-    //         },
-    //       },
-    //     },
-    //   },
-    // },
+   
   });
 }
 

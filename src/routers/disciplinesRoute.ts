@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getDisciplines } from "../controllers/disciplinesController.js";
+import { getDisciplines } from "../controllers/disciplinesController";
 
 const disciplinesRoute = Router();
 

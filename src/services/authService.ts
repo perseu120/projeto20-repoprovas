@@ -19,7 +19,7 @@ export async function login(user:authRepository.UserInsertData) {
             code :"Unauthorized"
         }
     }
-    
+
     const token = createToken(userData);
                                                                                                                                                                                               
     return token;    
