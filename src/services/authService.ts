@@ -21,7 +21,7 @@ export async function login(user:authRepository.UserInsertData) {
     }
     
     const token = createToken(userData);
-
+                                                                                                                                                                                              
     return token;    
 }
 

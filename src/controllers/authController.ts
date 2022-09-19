@@ -7,7 +7,6 @@ export async function signinController(req: Request, res: Response){
     const recebeDados:UserInsertData = req.body;
 
     const token = await  authService.login(recebeDados);
-    console.log(token);
     res.status(200).send(token);
 }
 

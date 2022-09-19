@@ -14,9 +14,5 @@ app.use(authRouter);
 app.use(errorHandlerMiddleware);
 
 
-const PORT = Number(process.env.PORT) ;
-
-app.listen(PORT, () => {
-  console.log(`Server com TS rodando na porta: ${PORT}`);
-});
+export default app;
 

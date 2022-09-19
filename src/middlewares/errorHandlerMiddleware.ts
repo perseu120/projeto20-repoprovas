@@ -17,6 +17,9 @@ export default function errorHandler (error: any, req: Request, res: Response, n
   else if (error.code === "Expired") {
     return res.sendStatus(410);
   }
+  else if (error.code === "Bad Request"){
+    return res.sendStatus(400);
+  }
   
   res.sendStatus(500); // internal server error
 }
