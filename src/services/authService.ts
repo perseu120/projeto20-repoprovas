@@ -26,7 +26,7 @@ export async function login(user:authRepository.UserInsertData) {
 }
 
 function createToken(user:authRepository.User){
-    const SECRET: string = process.env.TOKEN_SECRET_KEY ?? '';
+    const SECRET: string = process.env.TOKEN_SECRET_KEY;
 
     const token = jwt.sign(user, SECRET);
     
